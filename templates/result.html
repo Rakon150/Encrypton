@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        .box { margin: 20px auto; padding: 20px; border: 1px solid #ccc; width: 60%; border-radius: 10px; font-size: 18px; background: #f9f9f9; }
+        button { margin-top: 15px; padding: 10px 20px; font-size: 16px; border-radius: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Result</h2>
+    <div class="box" id="output">{{ output }}</div>
+    <button onclick="copyText()">Copy</button>
+
+    <script>
+        function copyText() {
+            var text = document.getElementById("output").innerText;
+            navigator.clipboard.writeText(text).then(() => { alert("Copied to clipboard!"); });
+        }
+    </script>
+</body>
+</html>
